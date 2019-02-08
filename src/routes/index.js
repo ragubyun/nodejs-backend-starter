@@ -1,8 +1,8 @@
 import { Router } from 'express';
 
-const router = Router();
-
 import sampleRouter from './sample';
+
+const router = Router();
 
 router.use('/sample', sampleRouter);
 
