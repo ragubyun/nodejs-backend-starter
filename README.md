@@ -7,3 +7,4 @@
 - express: router, json, static, morgan, debug + cors
 - inspect
 - 설치시 @types/xx
+- test: jest, supertest

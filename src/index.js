@@ -25,8 +25,6 @@ app.listen(PORT, () => {
 
 /*
   TODO
-    - test: jest, coverage
-    - eslint, prettier
+    - test: jest, coverage, supertest, swagger
     - monitoring
-    - debug
  */
