@@ -1,9 +1,13 @@
 import { Router } from 'express';
+import Debug from 'debug';
+
+const routerDebug = new Debug('express:router');
 
 const router = Router();
 
 router.get('/', (request, response) => {
   response.send('method GET'); // default status code 200
+  routerDebug('router debug sample');
 });
 
 router.get('/:param', (request, response) => {
