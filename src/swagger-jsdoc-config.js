@@ -5,6 +5,7 @@ const swaggerDefinition = {
     title: 'Node.js Backend Starter APIs',
     version: '1.0.0',
   },
+  basePath: '/api/v1',
 };
 
 const options = {

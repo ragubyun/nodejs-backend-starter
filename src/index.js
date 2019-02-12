@@ -9,7 +9,7 @@ import swaggerSpec from './swagger-jsdoc-config';
 const app = express();
 const { PORT = 3000 } = process.env;
 
-const appDebug = new Debug('express:app');
+const debugApp = new Debug('express:app');
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -17,11 +17,11 @@ app.use('/api/v1', routes);
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
 app.listen(PORT, () => {
-  appDebug(`listening on port ${PORT}!`);
+  debugApp(`listening on port ${PORT}!`);
 });
 
 /*
   TODO
-    - test: jest, coverage, supertest, swagger
+    - test: jest, coverage, supertest
     - monitoring
  */

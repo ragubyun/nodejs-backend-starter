@@ -1,36 +1,61 @@
 import { Router } from 'express';
 import Debug from 'debug';
 
-import sampleRouter from './sample';
+import routerUsers from './router-users';
 
-const httpDebug = new Debug('express:http');
+const debugHttp = new Debug('express:http');
 
 const router = Router();
 
 router.use((request, response, next) => {
-  httpDebug(`${request.method} ${request.url}`);
-  httpDebug(`body: ${JSON.stringify(request.body)}`);
+  debugHttp(`${request.method} ${request.url}`);
+  debugHttp(`body: ${JSON.stringify(request.body)}`);
   next();
 });
 
 /**
  * @swagger
  * tags:
- *   name: Sample
- *   description: Sample management
+ *   name: Users
+ *   description: User management
  * definitions:
- *   Sample:
+ *   User:
  *     type: object
  *     required:
- *       - content
+ *       - id
+ *       - name
+ *       - phone
  *     properties:
  *       id:
  *         type: string
- *         description: id
- *       content:
+ *         description: user id
+ *       name:
  *         type: string
- *         description: content
+ *         description: full name
+ *       phone:
+ *         type: string
+ *         description: e.g. xxx-xxxx-xxxx
+ *     example:
+ *       id: rain
+ *       name: Jihoon Byun
+ *       phone: 010-1234-5678
+ *   Response:
+ *     type: object
+ *     required:
+ *       - result
+ *       - code
+ *       - message
+ *     properties:
+ *       result:
+ *         type: string
+ *         description: result of request
+ *       code:
+ *         type: string
+ *         description: error code from server
+ *       message:
+ *         type: string
+ *         description: error message detail
  */
-router.use('/sample', sampleRouter);
+router.use('/users', routerUsers);
 
 export default router;
