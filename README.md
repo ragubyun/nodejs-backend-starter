@@ -43,12 +43,16 @@ http://<app_host>:<app_port>**/api-docs**
 
 ## npm script
 
-```bash
-"test": "jest --collectCoverage"
-"start": "npm run serve",
-"serve": "DEBUG=express:app,express:http nodemon --exec 'npm run lint && babel-node src/index.js'",
-"debugging": "DEBUG=* nodemon --exec 'npm run lint && babel-node src/index.js --inspect'"
-"lint": "eslint --ignore-path .gitignore ."
+```json
+{
+  "scripts": {
+    "test": "jest --collectCoverage",
+    "start": "npm run serve",
+    "serve": "DEBUG=express:app,express:http nodemon --exec 'npm run lint && babel-node src/index.js'",
+    "debugging": "DEBUG=* nodemon --exec 'npm run lint && babel-node src/index.js --inspect'",
+    "lint": "eslint --ignore-path .gitignore ."
+  }
+}
 ```
 
 ## Installation
