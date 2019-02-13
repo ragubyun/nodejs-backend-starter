@@ -10,7 +10,7 @@ const router = Router();
  * /users:
  *   get:
  *     tags: [Users]
- *     summary: Get all list of user information.
+ *     summary: Get all users.
  *     responses:
  *       200:
  *         description: OK
@@ -20,11 +20,12 @@ const router = Router();
  *             users:
  *               type: array
  *               items:
- *                 $ref: '#/definitions/Response'
+ *                 $ref: '#/definitions/User'
  */
 router.get('/', (request, response) => {
   debugRouter('router debug sample');
-  response.send('method GET'); // default status code 200
+
+  return response.send('list of all users'); // default status code 200
 });
 
 /**
@@ -44,11 +45,12 @@ router.get('/', (request, response) => {
  *       200:
  *         description: OK
  *         schema:
- *           $ref: '#/definitions/Response'
+ *           $ref: '#/definitions/User'
  */
 router.get('/:id', (request, response) => {
   const { id } = request.params;
-  response.send(`method GET with path param: ${id}`); // default status code 200
+
+  return response.send(`user information of ${id}`); // default status code 200
 });
 
 /**
@@ -73,11 +75,27 @@ router.get('/:id', (request, response) => {
  *         description: Conflict
  *         schema:
  *           $ref: '#/definitions/Response'
+ *       422:
+ *         description: Unprocessable Entity
+ *         schema:
+ *           $ref: '#/definitions/Response'
  */
 router.post('/', (request, response) => {
-  const { body } = request.body;
+  const { id, name, phone } = request.body;
 
-  response.status(200).send(`method POST: ${body}`);
+  if (!id || !name || !phone) {
+    return response.status(422).send({
+      result: 'fail',
+      code: '422',
+      message: 'Unprocessable Entity',
+    });
+  }
+
+  return response.status(201).send({
+    result: 'success',
+    code: '201',
+    message: 'Created',
+  });
 });
 
 export default router;

@@ -1,17 +1,11 @@
 import { Router } from 'express';
-import Debug from 'debug';
 
 import routerUsers from './router-users';
-
-const debugHttp = new Debug('express:http');
+import httpLogger from '../middleware/http-logger';
 
 const router = Router();
 
-router.use((request, response, next) => {
-  debugHttp(`${request.method} ${request.url}`);
-  debugHttp(`body: ${JSON.stringify(request.body)}`);
-  next();
-});
+router.use(httpLogger);
 
 /**
  * @swagger

@@ -4,7 +4,7 @@ import Debug from 'debug';
 import swaggerUI from 'swagger-ui-express';
 
 import routes from './routes/index';
-import swaggerSpec from './swagger-jsdoc-config';
+import swaggerSpec from './config/swagger-jsdoc-config';
 
 const app = express();
 const { PORT = 3000 } = process.env;
@@ -19,9 +19,3 @@ app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 app.listen(PORT, () => {
   debugApp(`listening on port ${PORT}!`);
 });
-
-/*
-  TODO
-    - test: jest, coverage, supertest
-    - monitoring
- */
