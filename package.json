@@ -1,15 +1,16 @@
 {
   "name": "nodejs-backend-starter",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1",
+  "description": "Node.js Starter Project for Backend",
   "main": "index.js",
   "scripts": {
     "test": "jest --collectCoverage",
-    "start": "DEBUG=express:app,express:http nodemon --exec 'npm run lint && babel-node src/index.js'",
+    "start": "npm run serve",
+    "serve": "DEBUG=express:app,express:http nodemon --exec 'npm run lint && babel-node src/index.js'",
     "debugging": "DEBUG=* nodemon --exec 'npm run lint && babel-node src/index.js --inspect'",
     "lint": "eslint --ignore-path .gitignore ."
   },
-  "author": "",
+  "author": "Rain Byun",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
