@@ -59,3 +59,18 @@ npm install
 ## Usage
 
 Enjoy.
+
+## Roadmap
+
+`v0.1` 버전은 소스 자체를 clone 받아서 사용하는 형태
+ 
+`v0.2` 버전에서는 아래 라이브러리들을 이용하여 *command-line interface*를 통해서 기능들을 선택하여 프로젝트를 생성하도록 할 예정 
+
+- [chalk](https://github.com/chalk/chalk)
+- [commander.js](https://github.com/tj/commander.js)
+- [Inquirer.js](https://github.com/SBoudrias/Inquirer.js)
+
+참고
+
+> npm trends 에서 chalk, commander.js, Inquirer.js 비교  
+  https://www.npmtrends.com/chalk-vs-commander-vs-inquirer
