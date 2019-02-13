@@ -30,10 +30,16 @@ Node.js 로 Back-end 프로젝트를 시작할 때 스타터로 사용 할 만�
 
 - [`Swagger`](https://swagger.io/) for document the http APIs specification and test
   - [swagger-ui-express](https://github.com/scottie1984/swagger-ui-express) swagger ui 를 express 와 쉽게 통합할 수 있게 해주는 라이브러리
-  - [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc) 주석을 사용하여 swagger와 통합 
-      ```
-      JSDoc은 JavaScript 용 API 문서 생성기로 Javadoc과 유사하다.
-      ```
+  - [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc) 주석을 사용하여 swagger와 통합
+    - JSDoc은 JavaScript 용 API 문서 생성기로 Javadoc과 유사하다.
+
+### Swagger URL
+
+http://<app_host>:<app_port>**/api-docs**
+
+#### In this project
+
+> http://localhost:3000/api-docs
 
 ## npm script
 
@@ -44,7 +50,6 @@ Node.js 로 Back-end 프로젝트를 시작할 때 스타터로 사용 할 만�
 "debugging": "DEBUG=* nodemon --exec 'npm run lint && babel-node src/index.js --inspect'"
 "lint": "eslint --ignore-path .gitignore ."
 ```
-
 
 ## Installation
 
