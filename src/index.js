@@ -19,3 +19,5 @@ app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 app.listen(PORT, () => {
   debugApp(`listening on port ${PORT}!`);
 });
+
+// TODO type script 적용

@@ -1,6 +1,6 @@
 {
   "name": "nodejs-backend-starter",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "Node.js Starter Project for Backend",
   "main": "index.js",
   "scripts": {

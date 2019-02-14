@@ -1,6 +1,6 @@
 # Node.js Starter Project for Backend
 
-Node.js 로 Back-end 프로젝트를 시작할 때 스타터로 사용 할 만한 기본 틀
+Node.js 로 Back-end 프로젝트를 시작할 때 스타터로 사용 할 만한 기본 템플릿
 
 비지니스 개발에 필요한 샘플 소스가 아닌 개발 과정에서 필요한 환경 설정 및 기본적인 기술 스택의 초기설정만을 포함하고 있다. 
 
@@ -20,7 +20,7 @@ Node.js 로 Back-end 프로젝트를 시작할 때 스타터로 사용 할 만�
 
 - [`ESLint`](https://eslint.org/) for linting JavaScript - airbnb base
 
-- [`Jest`](https://jestjs.io/) for unit tes
+- [`Jest`](https://jestjs.io/) for unit test
   - [supertest](https://github.com/visionmedia/supertest)
   
 - [`DefinitelyTyped`](http://definitelytyped.org/) high quality TypeScript type definitions
